@@ -27,9 +27,9 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
                 {
                     // Pickup Object
                     PickupObject(hit.transform.gameObject);
-                    if (hit.transform.gameObject.tag == "Drink")
+                    if (hit.transform.gameObject.tag == "Drink") //if the object is drink object
                     {
-                        drink.drinkObject = hit.transform.gameObject; 
+                        drink.drinkObject = hit.transform.gameObject; //assign it so that drink script can access it
                     }
                 }
             } 
