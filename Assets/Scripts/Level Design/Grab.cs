@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Drink : MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&list=WL&index=7&t=20s
+public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&list=WL&index=7&t=20s
 {
     [Header("Pickup Settings")]
     [SerializeField] Transform holdArea;
+    [SerializeField] Drink drink; 
+
     GameObject heldObj; 
     Rigidbody heldBody;
 
@@ -24,12 +26,17 @@ public class Drink : MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo
                 if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange))
                 {
                     // Pickup Object
-                    PickupObject(hit.transform.gameObject); 
+                    PickupObject(hit.transform.gameObject);
+                    if (hit.transform.gameObject.tag == "Drink")
+                    {
+                        drink.drinkObject = hit.transform.gameObject; 
+                    }
                 }
             } 
             else
             {
-                DropObject(); 
+                DropObject();
+                drink.drinkObject = null;
             }
         }
         if (heldObj != null)

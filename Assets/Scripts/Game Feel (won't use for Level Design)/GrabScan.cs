@@ -10,7 +10,7 @@ public class GrabScan : MonoBehaviour
     [Header("Other Scripts")]
     public SwitchingBodies sb; 
     public PlayerMovement pm;
-    public Drink drink; 
+    
 
     [Header("Internal Constraints")]
     [SerializeField] LayerMask grabScanLayerMask; //this is used to select which layers the hitscan will interact with (other layers will be ignored)
@@ -80,16 +80,6 @@ public class GrabScan : MonoBehaviour
             return true; //return true if the raycast hit an object that interests us
         }
         */
-
-
-        #region Grabbing Beer
-        if (hit.collider.gameObject.tag == "Drink") //if the object hit has the tag "Drink" do this:
-        {
-            //Grab Beer Trigger Here
-            //drink.grabbingBeer = true; 
-            return true; //true if the object is drink
-        }
-        #endregion
 
         return false; //false if none of these objects
     }
