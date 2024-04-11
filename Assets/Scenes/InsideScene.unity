@@ -1019,7 +1019,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60082ff8792e99b48830cace40cfd887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drinkSizeModifier: 0.005
+  drinkSizeModifier: 0.05
+  drinkSizeLimit: 0.2
   canDrink: 0
   finishedDrink: 0
   drinksDrunk: 0

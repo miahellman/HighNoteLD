@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class Drink : MonoBehaviour
 {
     [Header("Internal Constraints")]
     [SerializeField] float drinkSizeModifier;
+    [SerializeField] float drinkSizeLimit;
     [SerializeField] bool canDrink, finishedDrink;
 
     public int drinksDrunk;
@@ -29,7 +31,7 @@ public class Drink : MonoBehaviour
         if (drinkObject != null)
         {
             drinkSize = drinkObject.transform.localScale;
-            if (drinkSize.x > .1f) //jist checking one axis cause all axis' should be the same
+            if (drinkSize.x > drinkSizeLimit) //jist checking one axis cause all axis' should be the same
             {
                 canDrink = true;
             }
@@ -45,7 +47,7 @@ public class Drink : MonoBehaviour
             }
             
 
-            if (drinkSize.x <= .1f)
+            if (drinkSize.x <= drinkSizeLimit)
             {
                 drinksDrunk++; 
                 Destroy(drinkObject);
