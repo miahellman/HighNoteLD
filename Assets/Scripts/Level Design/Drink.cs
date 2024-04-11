@@ -9,7 +9,7 @@ public class Drink : MonoBehaviour
     [Header("Internal Constraints")]
     [SerializeField] float drinkSizeModifier;
     [SerializeField] float drinkSizeLimit;
-    [SerializeField] bool canDrink, finishedDrink;
+    [SerializeField] bool canDrink;
 
     public int drinksDrunk;
 
