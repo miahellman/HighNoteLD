@@ -15,6 +15,7 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
     [Header("Physics Parameters")]
     [SerializeField] float pickupRange = 5f;
     [SerializeField] float pickupForce = 150f;
+    [SerializeField] float throwForce = 1f; //impulse force for throwing objects
 
     private void Update()
     {
@@ -42,6 +43,12 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
         if (heldObj != null)
         {
             MoveObject();
+        }
+
+        //able to throw if holding an object
+        if(Input.GetMouseButtonDown(1) && heldObj != null)
+        {
+            ThrowObject();
         }
     }
 
@@ -75,5 +82,20 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
 
         heldBody.transform.parent = null;
         heldObj = null; 
+    }
+
+    //throwing objects with right click
+    void ThrowObject()
+    {
+        //update settings for the object being held
+        heldBody.useGravity = true;
+        heldBody.drag = 1;
+        heldBody.constraints = RigidbodyConstraints.None;
+
+        heldBody.transform.parent = null;
+        heldObj = null; 
+
+        //add impulse to the object to throw
+        heldBody.AddForce(transform.forward * throwForce, ForceMode.Impulse);
     }
 }
