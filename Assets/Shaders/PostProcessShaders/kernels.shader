@@ -110,7 +110,7 @@
                 );
                 
                 float3 color = convolution(i.uv, edgeDetectionKernel);
-                return float4(color.xyy, 1.0);
+                return float4(color.rgb, 1.0);
             }
             ENDCG
         }
