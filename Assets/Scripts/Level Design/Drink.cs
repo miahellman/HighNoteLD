@@ -9,6 +9,7 @@ public class Drink : MonoBehaviour
     [Header("Internal Constraints")]
     [SerializeField] float drinkSizeModifier;
     [SerializeField] float drinkSizeLimit;
+    [SerializeField] float drunkLimit;
     [SerializeField] bool canDrink;
 
     public int drinksDrunk;
@@ -16,6 +17,7 @@ public class Drink : MonoBehaviour
     [Header("External Modifiers")]
     //public Grab grab;
     public GameObject drinkObject;
+    public FOVChange fovChange; 
 
     Vector3 drinkSize;
     string drinkInputAxis = "Mouse ScrollWheel";
@@ -49,7 +51,12 @@ public class Drink : MonoBehaviour
 
             if (drinkSize.x <= drinkSizeLimit)
             {
-                drinksDrunk++; 
+                drinksDrunk++;
+                if (drinksDrunk >= drunkLimit) //if the player is drunk
+                {
+                    fovChange.increaseFOV();
+                } 
+                
                 Destroy(drinkObject);
                 drinkObject = null;
             }
