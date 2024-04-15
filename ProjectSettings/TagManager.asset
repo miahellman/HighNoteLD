@@ -7,6 +7,9 @@ TagManager:
   - EnemyTarget
   - Body
   - Drink
+  - Bathroom Entrance
+  - Toilet
+  - Bathroom Exit
   layers:
   - Default
   - TransparentFX

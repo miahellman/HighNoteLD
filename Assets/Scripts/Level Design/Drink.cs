@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Drink : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Drink : MonoBehaviour
 
     [Header("External Modifiers")]
     //public Grab grab;
+    public UrineManager urineManager; 
     public GameObject drinkObject;
     public FOVChange fovChange; 
 
@@ -45,17 +47,20 @@ public class Drink : MonoBehaviour
             {
                 drinkSize = new Vector3(drinkSize.x - drinkSizeModifier, drinkSize.y - drinkSizeModifier, drinkSize.z - drinkSizeModifier);
                 drinkObject.transform.localScale = drinkSize;
-                Debug.Log("drinking");
+
+                urineManager.urineMeter++; //every time you take a sip you need to pee a bit more
+
+                //Debug.Log("drinking");
+                if (drinksDrunk >= drunkLimit) //if the player is drunk
+                {
+                    fovChange.increaseFOV();
+                }
             }
-            
 
             if (drinkSize.x <= drinkSizeLimit)
             {
                 drinksDrunk++;
-                if (drinksDrunk >= drunkLimit) //if the player is drunk
-                {
-                    fovChange.increaseFOV();
-                } 
+             
                 
                 Destroy(drinkObject);
                 drinkObject = null;
@@ -63,6 +68,5 @@ public class Drink : MonoBehaviour
 
         }
         else { canDrink = false;  }
-        
     }
 }

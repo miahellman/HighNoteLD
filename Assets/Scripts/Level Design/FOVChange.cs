@@ -21,6 +21,10 @@ public class FOVChange : MonoBehaviour
 
     public void resetFOV()
     {
-        cam.fieldOfView = 60f; 
+        if (cam.fieldOfView > 60f)
+        {
+            cam.fieldOfView--;
+        }
+        else { cam.fieldOfView = 60f; }
     }
 }

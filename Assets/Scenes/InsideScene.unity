@@ -266,6 +266,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &193516478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193516480}
+  - component: {fileID: 193516479}
+  m_Layer: 0
+  m_Name: BathroomEnterance
+  m_TagString: Bathroom Entrance
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &193516479
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193516478}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.5250635, y: 5, z: 1.9564047}
+  m_Center: {x: -0.26253176, y: 0, z: -1.5217977}
+--- !u!4 &193516480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193516478}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.578575, y: 3.2, z: -4.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &199580048
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +516,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199580048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dfe73671f9344e469ec15c8c66373c6, type: 3}
   m_Name: 
@@ -478,7 +531,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199580048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 889ca9b5b4ea7984782a6b4f7dccdc61, type: 3}
   m_Name: 
@@ -2109,6 +2162,8 @@ GameObject:
   - component: {fileID: 1279171612}
   - component: {fileID: 1279171618}
   - component: {fileID: 1279171619}
+  - component: {fileID: 1279171620}
+  - component: {fileID: 1279171621}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2262,6 +2317,7 @@ MonoBehaviour:
   drunkLimit: 3
   canDrink: 0
   drinksDrunk: 0
+  urineManager: {fileID: 1279171621}
   drinkObject: {fileID: 0}
   fovChange: {fileID: 1279171619}
 --- !u!114 &1279171619
@@ -2278,7 +2334,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 199580051}
   fovMax: 100
-  fovModifier: 10
+  fovModifier: 1
+--- !u!114 &1279171620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279171608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf4873716311894686fbacba0525886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1279171621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279171608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623ae5c6951f52c44a64d459c9db5870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fovChange: {fileID: 1279171619}
+  urineMeter: 0
+  urineMax: 10
+  canPee: 0
 --- !u!1 &1289874463 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8023467731156203484, guid: 2e7c1a05b12b6444982eafaa45f90ac4, type: 3}
@@ -3047,3 +3131,4 @@ SceneRoots:
   - {fileID: 1080579894}
   - {fileID: 1218882325}
   - {fileID: 1399264221}
+  - {fileID: 193516480}
