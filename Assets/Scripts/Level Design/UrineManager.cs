@@ -10,6 +10,9 @@ public class UrineManager : MonoBehaviour
 
     public FOVChange fovChange; 
 
+    //game manager
+    public GameManager gameManager;
+
     public float urineMeter;
     public float urineMax;
     //public bool peed;
@@ -20,6 +23,9 @@ public class UrineManager : MonoBehaviour
 
     private void Start()
     {
+        //find game manager
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         urineMeter = 0f; 
     }
     private void Update()
@@ -28,21 +34,15 @@ public class UrineManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E) && canEnterBathroom)
         {
-            EnterBathroom();
+            gameManager.EnterBathroom();
         }
 
         if (Input.GetKey(KeyCode.E) && canExitBathroom)
         {
-            ExitBathroom();
+            gameManager.ExitBathroom();
         }
 
         PeeingInBathroom();
-    }
-    public void EnterBathroom()
-    {
-        //enter the bathroom
-        
-        SceneManager.LoadScene("Bathroom");
     }
 
     public void PeeingInBathroom() //maybe there's a peeing out of the bathroom option if you get really drunk
@@ -60,12 +60,6 @@ public class UrineManager : MonoBehaviour
             fovChange.resetFOV();
         }
         //play animation of player pissing or something
-    }
-
-    public void ExitBathroom()
-    {
-        //transition to new bar scene with weirder stuff  (edit later to randomize what bar you enter)
-        SceneManager.LoadScene("InsideScene");
     }
 
     public void TooMuchUrine()
