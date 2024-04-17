@@ -106,11 +106,16 @@
                     // edge detection
                      1,  0, -1,
                      0,  0,  0,
-                    -1,  0,  1
+                     -1,  0,  1
+                     
                 );
-                
-                float3 color = convolution(i.uv, edgeDetectionKernel);
-                return float4(color.rgb, 1.0);
+
+
+                float3 base = convolution(i.uv, embossKernel);
+                float3 main = tex2D(_MainTex, i.uv).rgb;
+
+                //return main - base
+                return float4((main + 1) * (base), 1.0);
             }
             ENDCG
         }

@@ -53,7 +53,7 @@ Shader "Custom/backgroundGradient"
                 //add white noise over posterized pixels
                 color = lerp(color, cos(50 * _Time.z * wn).r, 0.1);
 
-                return float4(color, 1.0);
+                return float4(color.rrr, 1.0);
             }
             ENDCG
         }
