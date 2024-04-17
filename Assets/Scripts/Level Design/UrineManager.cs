@@ -32,9 +32,16 @@ public class UrineManager : MonoBehaviour
     }
     private void Update()
     {
-        exitPosition = GameObject.Find("ExitPosition").GetComponent<Transform>();
-        enterPosition = GameObject.Find("EnterPosition").GetComponent<Transform>();
+        if (SceneManager.GetActiveScene().name == "Bathroom")
+        {
+            exitPosition = GameObject.Find("ExitPosition").GetComponent<Transform>();
+        }
+        if (SceneManager.GetActiveScene().name == "InsideScene")
+        {
+            enterPosition = GameObject.Find("EnterPosition").GetComponent<Transform>();
+        }
     }
+        
     private void FixedUpdate()
     {
         //VISUALIZATION OF URINE MANAGER SOMEWHERE HERE
