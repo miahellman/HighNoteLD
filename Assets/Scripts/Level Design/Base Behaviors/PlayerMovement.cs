@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header ("setup")]
     public bool switchingBody;
     public GameObject visual;
+    public GameManager gameManager; 
     [SerializeField] float speed; //how fast the player moves using velocityInput
     [SerializeField] float gravity, jumpHeight; //set these values to get the gravity and jump height you want
 
@@ -19,18 +20,21 @@ public class PlayerMovement : MonoBehaviour
     float jumpVelocity; //this value should not be set in the inspector because we are using an equation below to calculate jumpVelocity based on jumpHeight and gravity
     bool jumpTriggered;
 
+
+
     void Start()
     {
         //get access to the character controller and player input components
         characterController = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
 
     void Update()
     {
 
-        if (!switchingBody)
+        if (gameManager.readyWASD)
         {
 
             if (visual.name == "Disk") //sometimes this works sometimes it doesn't idk why
@@ -77,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!switchingBody)
+        if (gameManager.readyWASD)
         {
 
             Vector3 forwardInput = transform.forward * axisForward; //set how the player should be moving forward by multiplying the forward vector (the direction the player is currently facing) by the forward input (from the W/S keys on the ekyeboard or up/down on the left analog stick)
@@ -105,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
 /// </summary>
     void Jump()
         {
-            if (!switchingBody) { velocityGravity.y = jumpVelocity; }
+            if (gameManager.readyWASD) { velocityGravity.y = jumpVelocity; }
         }
         
     

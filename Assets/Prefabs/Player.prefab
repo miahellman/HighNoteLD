@@ -296,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5856423451904946759}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7747569, z: -0, w: 0.6322593}
+  m_LocalRotation: {x: 0, y: -0.7747571, z: 0, w: 0.632259}
   m_LocalPosition: {x: 6.83, y: 2.081, z: 6.742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -325,7 +325,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.15
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -481,6 +481,8 @@ MonoBehaviour:
   urineMeter: 0
   urineMax: 10
   canPee: 0
+  enterPosition: {fileID: 0}
+  exitPosition: {fileID: 0}
 --- !u!1 &8547744843547965377
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +586,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.15
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

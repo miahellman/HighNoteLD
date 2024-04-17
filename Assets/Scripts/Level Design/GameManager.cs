@@ -6,10 +6,17 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool gamePaused = false;
+    public bool readyWASD;
+    public bool readyMouse; 
+
+    public float countDownWASD; 
+    public float countDownMouse;
+
     public ModifyUI modifyUI;
 
     //singleton 
     public static GameManager instance;
+    public GameObject player; 
 
     [HideInInspector] public bool isGameOver = false;
 
@@ -24,6 +31,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        player = GameObject.Find("Player"); 
     }
 
     private void Start()
@@ -34,6 +43,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (countDownWASD > 0) { countDownWASD -= Time.deltaTime; } else { countDownWASD = 0; }
+        if (countDownWASD <= 0) { readyWASD = true; }
+        if (countDownMouse > 0) { countDownMouse -= Time.deltaTime; } else { countDownMouse = 0; }
+        if (countDownMouse <= 0) { readyMouse = true; }
+
+        Scene scene = SceneManager.GetActiveScene();
         //pausing game function
         //pause game function for gameplay scene only
         if (Input.GetKeyUp(KeyCode.Escape) && gamePaused == false) { gamePaused = true; }
@@ -70,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void ExitBathroom()
     {
-        //enter the bathroom
+        //exit the bathroom
 
         SceneManager.LoadScene("InsideScene");
     }

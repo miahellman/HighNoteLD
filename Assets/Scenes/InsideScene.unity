@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 193516480}
   - component: {fileID: 193516479}
   m_Layer: 0
-  m_Name: BathroomEnterance
+  m_Name: Bathroom Entrance
   m_TagString: Bathroom Entrance
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2121,6 +2121,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1371743157}
   pauseText: {fileID: 1329545758}
+--- !u!1 &1084664395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1084664397}
+  m_Layer: 0
+  m_Name: EnterPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1084664397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084664395}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.55774295, z: -0, w: -0.83001375}
+  m_LocalPosition: {x: -6.2212996, y: 2.6444707, z: -8.201593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119096695
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,17 +4714,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 230692806163211722, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+    - target: {fileID: 1319659946566774205, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3890275001030757632, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+    - target: {fileID: 1564431453665945556, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041685064156965530, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: m_Radius
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890275001030757632, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5856423451904946759, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955989412441940297, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6302430260764984929, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4773,6 +4816,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1267467056842079141, guid: daf1adb829c4ffe489a9f7b79c1940aa, type: 3}
+      propertyPath: countDownWASD
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267467056842079141, guid: daf1adb829c4ffe489a9f7b79c1940aa, type: 3}
+      propertyPath: countDownMouse
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267467056842079141, guid: daf1adb829c4ffe489a9f7b79c1940aa, type: 3}
+      propertyPath: startCountDown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331415975080029043, guid: daf1adb829c4ffe489a9f7b79c1940aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7370340898976090162, guid: daf1adb829c4ffe489a9f7b79c1940aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5044,3 +5103,4 @@ SceneRoots:
   - {fileID: 193516480}
   - {fileID: 1641335737}
   - {fileID: 1914408157}
+  - {fileID: 1084664397}

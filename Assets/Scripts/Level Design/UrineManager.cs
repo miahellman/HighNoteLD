@@ -18,8 +18,10 @@ public class UrineManager : MonoBehaviour
     //public bool peed;
     public bool canPee;
 
-    bool canEnterBathroom;
-    bool canExitBathroom;
+    [SerializeField] bool canEnterBathroom, canExitBathroom;
+
+    public Transform enterPosition; 
+    public Transform exitPosition;  
 
     private void Start()
     {
@@ -30,16 +32,27 @@ public class UrineManager : MonoBehaviour
     }
     private void Update()
     {
+        exitPosition = GameObject.Find("ExitPosition").GetComponent<Transform>();
+        enterPosition = GameObject.Find("EnterPosition").GetComponent<Transform>();
+    }
+    private void FixedUpdate()
+    {
         //VISUALIZATION OF URINE MANAGER SOMEWHERE HERE
 
         if (Input.GetKey(KeyCode.E) && canEnterBathroom)
         {
-            gameManager.EnterBathroom();
+            transform.position = enterPosition.position;
+            gameManager.EnterBathroom();  
+
+            canEnterBathroom = false;
         }
 
         if (Input.GetKey(KeyCode.E) && canExitBathroom)
         {
-            gameManager.ExitBathroom();
+            transform.position = exitPosition.position;
+            gameManager.ExitBathroom(); 
+
+            canExitBathroom = false;
         }
 
         PeeingInBathroom();
