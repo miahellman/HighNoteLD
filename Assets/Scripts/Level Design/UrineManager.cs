@@ -67,7 +67,7 @@ public class UrineManager : MonoBehaviour
 
     public void PeeingInBathroom() //maybe there's a peeing out of the bathroom option if you get really drunk
     {
-        if (canPee && Input.GetKeyDown(KeyCode.E)) //if they can pee and they hit the pee button
+        if (canPee && Input.GetKey(KeyCode.E)) //if they can pee and they hit the pee button
         {
             if (urineMeter > 0f)
             {
