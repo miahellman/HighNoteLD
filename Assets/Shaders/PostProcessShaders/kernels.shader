@@ -3,6 +3,7 @@
     Properties
     {
         _MainTex ("render texture", 2D) = "white"{}
+        _ms ("main strenght", range(0, 20)) = 1
     }
 
     SubShader
@@ -19,6 +20,7 @@
             #include "UnityCG.cginc"
             
             sampler2D _MainTex; float4 _MainTex_TexelSize;
+            float _ms;
 
             struct MeshData
             {
@@ -111,11 +113,12 @@
                 );
 
 
-                float3 base = convolution(i.uv, embossKernel);
+                float3 base = convolution(i.uv, edgeDetectionKernel);
                 float3 main = tex2D(_MainTex, i.uv).rgb;
 
-                //return main - base
-                return float4((main + 1) * (base), 1.0);
+                //return float4(base, 1.0);
+                //return float4(main + _ms, 1.0);
+                return float4((main + _ms) * (base), 1.0);
             }
             ENDCG
         }
