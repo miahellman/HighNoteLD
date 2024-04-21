@@ -93,42 +93,24 @@ public class UrineManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*
-        //if in range to go to bathroom
-        if (other.tag == "Bathroom Entrance")
-        {
-            canEnterBathroom = true; 
-        }
         //if in range to pee
         if (other.tag == "Toilet")
         {
             canPee = true;
         }
-        //if in range to leave
-        if (other.tag == "Bathroom Exit")
-        {
-            canExitBathroom = true;
-        }
-        */
+
+        
     }
     private void OnTriggerExit(Collider other)
     {
-        /*
-        //if out range to go to bathroom
-        if (other.tag == "Bathroom Entrance")
-        {
-            canEnterBathroom = false;
-        }
+        
+
         //if out range to pee
         if (other.tag == "Toilet")
         {
             canPee = false;
         }
-        //if out range to leave
-        if (other.tag == "Bathroom Exit") 
-        {
-            canExitBathroom = false;
-        }
-        */
+  
+        
     }
 }
