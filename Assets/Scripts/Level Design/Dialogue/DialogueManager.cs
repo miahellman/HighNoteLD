@@ -17,7 +17,8 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
     }
-
+    
+    // Start the dialogue
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("IsOpen", true);
@@ -34,6 +35,7 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    // Display the next sentence in the dialogue
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
@@ -47,16 +49,21 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
+    // Coroutine to display the sentence letter by letter
     IEnumerator TypeSentence(string sentence)
     {
+        // Clear the dialogue text
         dialogueText.text = "";
+        // Display the sentence letter by letter
         foreach (char letter in sentence.ToCharArray())
         {
+            // Add the letter to the dialogue text
             dialogueText.text += letter;
             yield return null;
         }
     }
 
+    // Close the dialogue box
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
