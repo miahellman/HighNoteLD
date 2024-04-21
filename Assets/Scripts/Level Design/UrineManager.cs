@@ -18,10 +18,10 @@ public class UrineManager : MonoBehaviour
     //public bool peed;
     public bool canPee;
 
-    [SerializeField] bool canEnterBathroom, canExitBathroom;
+    //[SerializeField] bool canEnterBathroom, canExitBathroom;
 
-    public Transform enterPosition; 
-    public Transform exitPosition;  
+    //public Transform enterPosition; 
+    //public Transform exitPosition;  
 
     private void Start()
     {
@@ -32,6 +32,7 @@ public class UrineManager : MonoBehaviour
     }
     private void Update()
     {
+       /*
         if (SceneManager.GetActiveScene().name == "Bathroom")
         {
             exitPosition = GameObject.Find("ExitPosition").GetComponent<Transform>();
@@ -40,12 +41,14 @@ public class UrineManager : MonoBehaviour
         {
             enterPosition = GameObject.Find("EnterPosition").GetComponent<Transform>();
         }
+       */
     }
         
     private void FixedUpdate()
     {
         //VISUALIZATION OF URINE MANAGER SOMEWHERE HERE
 
+        /*
         if (Input.GetKey(KeyCode.E) && canEnterBathroom)
         {
             transform.position = enterPosition.position;
@@ -61,6 +64,7 @@ public class UrineManager : MonoBehaviour
 
             canExitBathroom = false;
         }
+        */
 
         PeeingInBathroom();
     }
@@ -89,6 +93,7 @@ public class UrineManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
         //if in range to go to bathroom
         if (other.tag == "Bathroom Entrance")
         {
@@ -104,10 +109,11 @@ public class UrineManager : MonoBehaviour
         {
             canExitBathroom = true;
         }
+        */
     }
     private void OnTriggerExit(Collider other)
     {
-
+        /*
         //if out range to go to bathroom
         if (other.tag == "Bathroom Entrance")
         {
@@ -123,5 +129,6 @@ public class UrineManager : MonoBehaviour
         {
             canExitBathroom = false;
         }
+        */
     }
 }

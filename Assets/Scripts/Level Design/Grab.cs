@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&list=WL&index=7&t=20s
 {
+    public DialogueTrigger dialogueTrigger;
+
     [Header("Pickup Settings")]
     [SerializeField] Transform holdArea;
     [SerializeField] Drink drink; 
@@ -32,14 +34,23 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
                     {
                         drink.drinkObject = hit.transform.gameObject; //assign it so that drink script can access it
                     }
-                }
+                    if (hit.transform.gameObject.tag == "Bartenders")
+                    {
+                        Debug.Log("Bartenders");
+                        dialogueTrigger.TriggerDialogue();
+                    }
+                } 
+
+
             } 
             else
             {
                 DropObject();
                 drink.drinkObject = null;
             }
+
         }
+
         if (heldObj != null)
         {
             MoveObject();

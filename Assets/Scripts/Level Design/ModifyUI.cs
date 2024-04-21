@@ -7,6 +7,7 @@ using UnityEngine.InputSystem.XR;
 public class ModifyUI : MonoBehaviour
 {
     public GameManager gameManager;
+
     [SerializeField] TextMeshProUGUI pauseText;
 
 
@@ -16,6 +17,6 @@ public class ModifyUI : MonoBehaviour
     {
       
         //update text to show game is paused if paused is true
-        pauseText.text = gameManager.gamePaused ? "PAUSED" : "";
+        pauseText.text = gameManager.gamePaused ? "paused" : "";
     }
 }
