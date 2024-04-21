@@ -11,6 +11,7 @@ TagManager:
   - Toilet
   - Bathroom Exit
   - Bartenders
+  - BarExit
   layers:
   - Default
   - TransparentFX

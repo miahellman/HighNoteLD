@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float countDownMouse;
 
     public ModifyUI modifyUI;
+    public CanExit canExit;
 
     //singleton 
     public static GameManager instance;
@@ -32,14 +33,19 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        player = GameObject.Find("Player"); 
+        //find player object
+        player = GameObject.Find("Player");
+   
     }
-
+    // Start is called before the first frame update
     private void Start()
     {
         //find modifyUI component in canvas
         modifyUI = GameObject.Find("Canvas").GetComponent<ModifyUI>();
+        //find canExit component in player
+        canExit = GameObject.Find("EXIT").GetComponent<CanExit>();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -56,12 +62,17 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = gamePaused ? 0 : 1;
 
+        if (canExit.canExit && Input.GetKeyUp(KeyCode.Space))
+        {
+            SceneManager.LoadScene("EndScene");
+        }
+
     }
 
     //start game function
     public void StartGame()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("InsideScene");
     }
 
     //game over function

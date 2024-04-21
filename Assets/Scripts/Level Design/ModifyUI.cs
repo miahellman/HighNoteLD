@@ -7,8 +7,10 @@ using UnityEngine.InputSystem.XR;
 public class ModifyUI : MonoBehaviour
 {
     public GameManager gameManager;
+    public CanExit canExit;
 
     [SerializeField] TextMeshProUGUI pauseText;
+    [SerializeField] TextMeshProUGUI topText;
 
 
 
@@ -18,5 +20,6 @@ public class ModifyUI : MonoBehaviour
       
         //update text to show game is paused if paused is true
         pauseText.text = gameManager.gamePaused ? "paused" : "";
+        topText.text = canExit.canExit ? "- 'space' to call it a night -" : "- take the edge off -";
     }
 }
