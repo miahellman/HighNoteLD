@@ -9208,10 +9208,18 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1371743157}
+    - target: {fileID: 3817497945479731480, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1371743157}
     - target: {fileID: 4239068794855813405, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 990780006}
+    - target: {fileID: 4364996839427915001, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1371743157}
     - target: {fileID: 5856423451904946759, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_Name
       value: Player

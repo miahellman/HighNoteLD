@@ -64,7 +64,25 @@ public class GameManager : MonoBehaviour
 
         if (canExit.canExit && Input.GetKeyUp(KeyCode.Space))
         {
+            Debug.Log("game over");
+            GameOver();
+        }
+
+        //if 'x' pressed quick exit to end scene
+        if (Input.GetKeyUp(KeyCode.X))
+        {
             SceneManager.LoadScene("EndScene");
+        }
+
+        if (scene.name == "InsideScene")
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked; //disables the mouse cursor
+        } 
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
     }
@@ -82,7 +100,7 @@ public class GameManager : MonoBehaviour
 
         if (isGameOver)
         {
-            SceneManager.LoadScene("End");
+            SceneManager.LoadScene("EndScene");
         }
 
     }
@@ -104,7 +122,7 @@ public class GameManager : MonoBehaviour
     //reset game function
     public void ResetGame()
     {
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("StartScene");
     }
 
     public void QuitGame()
