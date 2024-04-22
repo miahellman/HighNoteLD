@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         //find modifyUI component in canvas
         modifyUI = GameObject.Find("Canvas").GetComponent<ModifyUI>();
         //find canExit component in player
-        canExit = GameObject.Find("EXIT").GetComponent<CanExit>();
+        canExit = GameObject.Find("Player").GetComponent<CanExit>();
     }
 
     // Update is called once per frame

@@ -6,14 +6,21 @@ public class CanExit : MonoBehaviour
 {
     public bool canExit = false;
 
-
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
         //if player touching exit door, can exit
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Body")
+        if (other.gameObject.tag == "BarExit")
         {
             Debug.Log("can exit");
             canExit = true;
-        } else { canExit = false; }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "BarExit")
+        {
+            canExit = false;
+        }
     }
 }

@@ -4983,6 +4983,24 @@ Transform:
   - {fileID: 953446208}
   m_Father: {fileID: 1641335737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1049691424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5856423451904946759, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+  m_PrefabInstance: {fileID: 310825228288805893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1049691435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049691424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8bfa3edc5067f4e93db62522f6b703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canExit: 0
 --- !u!1001 &1060173014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5175,7 +5193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1371743157}
-  canExit: {fileID: 1989723504}
+  canExit: {fileID: 1049691435}
   pauseText: {fileID: 1329545758}
   topText: {fileID: 1488710470}
 --- !u!114 &1080579896
@@ -8497,7 +8515,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -8553,19 +8571,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989723499}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1989723504
-MonoBehaviour:
+--- !u!65 &1989723504
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989723499}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb8bfa3edc5067f4e93db62522f6b703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canExit: 0
+  serializedVersion: 3
+  m_Size: {x: 9.999999, y: 2.5694149, z: 9.999998}
+  m_Center: {x: 0, y: -0.69808364, z: 0.0000003857731}
 --- !u!64 &2023510479
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9226,7 +9252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5955989412441940297, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6302430260764984929, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9271,7 +9297,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5856423451904946759, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1049691435}
   m_SourcePrefab: {fileID: 100100000, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
 --- !u!1 &370604477340501790
 GameObject:
@@ -9587,7 +9616,7 @@ PrefabInstance:
     - target: {fileID: 1267467056842079141, guid: daf1adb829c4ffe489a9f7b79c1940aa, type: 3}
       propertyPath: canExit
       value: 
-      objectReference: {fileID: 1989723504}
+      objectReference: {fileID: 1049691435}
     - target: {fileID: 1267467056842079141, guid: daf1adb829c4ffe489a9f7b79c1940aa, type: 3}
       propertyPath: countDownWASD
       value: 5
