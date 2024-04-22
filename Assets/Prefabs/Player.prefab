@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d2741b165c2304998e85a49798b0e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueTrigger: {fileID: 0}
   holdArea: {fileID: 781061929960780273}
   drink: {fileID: 5476870713078612708}
   pickupRange: 5
@@ -410,6 +411,7 @@ GameObject:
   - component: {fileID: 8490091581926182264}
   - component: {fileID: 8176976797651833979}
   - component: {fileID: 1404445257712504287}
+  - component: {fileID: 2157473791897041962}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -452,7 +454,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.15
   m_Height: 2
@@ -612,10 +614,19 @@ MonoBehaviour:
   urineMeter: 0
   urineMax: 10
   canPee: 0
-  canEnterBathroom: 0
-  canExitBathroom: 0
-  enterPosition: {fileID: 0}
-  exitPosition: {fileID: 0}
+--- !u!114 &2157473791897041962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856423451904946759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8bfa3edc5067f4e93db62522f6b703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canExit: 0
 --- !u!1 &8547744843547965377
 GameObject:
   m_ObjectHideFlags: 0
