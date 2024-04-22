@@ -9,7 +9,8 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
 
     [Header("Pickup Settings")]
     [SerializeField] Transform holdArea;
-    [SerializeField] Drink drink; 
+    [SerializeField] Drink drink;
+    public OrderDrink orderDrink; 
 
     GameObject heldObj; 
     Rigidbody heldBody;
@@ -30,7 +31,8 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
                 {
                     // Pickup Object
                     PickupObject(hit.transform.gameObject);
-                    if (hit.transform.gameObject.tag == "Drink") //if the object is drink object
+                    if (hit.transform.gameObject.tag == "Drink" ||
+                            (orderDrink.stoolOrder == true && hit.transform.gameObject.tag == "DrinkStool") /* || (other ordering and blah blah blah) */) //if the object is drink object
                     {
                         drink.drinkObject = hit.transform.gameObject; //assign it so that drink script can access it
                     }

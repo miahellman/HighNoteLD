@@ -13,6 +13,7 @@ TagManager:
   - Bartenders
   - BarExit
   - Order
+  - DrinkStool
   layers:
   - Default
   - TransparentFX

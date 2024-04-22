@@ -262,6 +262,7 @@ MonoBehaviour:
   dialogueTrigger: {fileID: 0}
   holdArea: {fileID: 781061929960780273}
   drink: {fileID: 5476870713078612708}
+  orderDrink: {fileID: 6725718308520854249}
   pickupRange: 5
   pickupForce: 150
   throwForce: 20
@@ -412,6 +413,7 @@ GameObject:
   - component: {fileID: 8176976797651833979}
   - component: {fileID: 1404445257712504287}
   - component: {fileID: 2157473791897041962}
+  - component: {fileID: 6725718308520854249}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -627,6 +629,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canExit: 0
+--- !u!114 &6725718308520854249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856423451904946759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88bbb618f84bd74888f73152c852ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canOrder: 0
+  normalDrink: {fileID: 5364457575705666252, guid: ffae36c41d2b64e42a2645fad5a597dc, type: 3}
+  stoolDrink: {fileID: 311999878483977069, guid: dbde7420bf66e124884839d08541323d, type: 3}
+  tableDrink: {fileID: 0}
+  spawnPosition: {fileID: 0}
+  normalOrder: 0
+  stoolOrder: 0
+  tableOrder: 0
 --- !u!1 &8547744843547965377
 GameObject:
   m_ObjectHideFlags: 0

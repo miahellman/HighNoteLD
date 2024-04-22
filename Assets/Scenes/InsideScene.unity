@@ -1860,7 +1860,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e2067cabd0634419b53a7db7621899, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1729012355}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e2067cabd0634419b53a7db7621899, type: 3}
       insertIndex: -1
@@ -3104,8 +3107,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2903156, y: 1.3273406, z: 3.436282}
-  m_Center: {x: 0.08731842, y: 0.1636703, z: 1.218141}
+  m_Size: {x: 1.2903156, y: 1.3273406, z: 2.7280548}
+  m_Center: {x: 0.08731843, y: 0.1636703, z: 0.8640231}
 --- !u!1001 &602323745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4415,8 +4418,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.91679966, b: 0, a: 1}
-  m_Intensity: 90.4
+  m_Color: {r: 1, g: 0, b: 0.75977707, a: 1}
+  m_Intensity: 200
   m_Range: 2.0357556
   m_SpotAngle: 43.4
   m_InnerSpotAngle: 21.80208
@@ -5130,42 +5133,17 @@ Transform:
   - {fileID: 953446208}
   m_Father: {fileID: 1641335737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1049691424 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5856423451904946759, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
-  m_PrefabInstance: {fileID: 310825228288805893}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1049691435 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2157473791897041962, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
   m_PrefabInstance: {fileID: 310825228288805893}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049691424}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb8bfa3edc5067f4e93db62522f6b703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1049691436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049691424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d88bbb618f84bd74888f73152c852ff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canOrder: 0
-  normalDrink: {fileID: 5364457575705666252, guid: ffae36c41d2b64e42a2645fad5a597dc, type: 3}
-  stoolDrink: {fileID: 0}
-  tableDrink: {fileID: 0}
-  spawnPosition: {fileID: 1729012355}
-  normalOrder: 0
-  stoolOrder: 0
-  tableOrder: 0
 --- !u!1001 &1060173014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8210,14 +8188,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729012354}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.64, y: 1.856, z: -1.243}
+  m_LocalRotation: {x: -0.00000008146027, y: 0.0014078633, z: -1.1468502e-10, w: 0.99999905}
+  m_LocalPosition: {x: -0.14581425, y: 1.1810001, z: 0.5044123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 901483274}
   - {fileID: 577582742}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 664182490}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1734722564
 BoxCollider:
@@ -9484,13 +9462,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6725718308520854249, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: spawnPosition
+      value: 
+      objectReference: {fileID: 1729012355}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5856423451904946759, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1049691436}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
 --- !u!1 &370604477340501790
 GameObject:
@@ -12575,4 +12554,3 @@ SceneRoots:
   - {fileID: 21290312}
   - {fileID: 75083350}
   - {fileID: 1509410766}
-  - {fileID: 1729012355}

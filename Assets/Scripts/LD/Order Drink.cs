@@ -10,7 +10,7 @@ public class OrderDrink : MonoBehaviour
     public bool canOrder;
     [SerializeField] GameObject normalDrink, stoolDrink, tableDrink;
     [SerializeField] Transform spawnPosition; 
-    [SerializeField] bool normalOrder, stoolOrder, tableOrder; //add the rest later and create system to switch between them;  
+    public bool normalOrder, stoolOrder, tableOrder; //add the rest later and create system to switch between them;  
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,10 @@ public class OrderDrink : MonoBehaviour
             if (normalOrder)
             {
                 Instantiate(normalDrink, spawnPosition.position, spawnPosition.rotation);
+            } 
+            else if (stoolOrder)
+            {
+                Instantiate(stoolDrink, spawnPosition.position, spawnPosition.rotation);
             }
         }
     }
