@@ -5138,7 +5138,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2157473791897041962, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
   m_PrefabInstance: {fileID: 310825228288805893}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1457198722}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb8bfa3edc5067f4e93db62522f6b703, type: 3}
@@ -7129,6 +7129,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455407987}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1457198722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5856423451904946759, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+  m_PrefabInstance: {fileID: 310825228288805893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1457198734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457198722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc6863eb3e2f914d91877391dfcadaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1509410765}
 --- !u!1001 &1480351266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9410,6 +9428,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1371743157}
+    - target: {fileID: 3890275001030757632, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4239068794855813405, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_TargetTexture
       value: 
@@ -9466,10 +9488,17 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 1729012355}
+    - target: {fileID: 6725718308520854249, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: dialogueTrigger
+      value: 
+      objectReference: {fileID: 1457198734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5856423451904946759, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1457198734}
   m_SourcePrefab: {fileID: 100100000, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
 --- !u!1 &370604477340501790
 GameObject:

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.UI.Image;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem.HID;
 
 public class OrderDrink : MonoBehaviour
 {
     [Header("Order System")]
     public bool canOrder;
+    public DialogueTrigger dialogueTrigger;
     [SerializeField] GameObject normalDrink, stoolDrink, tableDrink;
     [SerializeField] Transform spawnPosition; 
     public bool normalOrder, stoolOrder, tableOrder; //add the rest later and create system to switch between them;  
@@ -15,7 +17,7 @@ public class OrderDrink : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        normalOrder = true; 
     }
 
     // Update is called once per frame
@@ -39,6 +41,8 @@ public class OrderDrink : MonoBehaviour
         if(other.gameObject.tag == "Order")
         {
             canOrder = true;
+            dialogueTrigger.TriggerDialogue();
+            
         }
     }
     private void OnTriggerExit(Collider other)
