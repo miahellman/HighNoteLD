@@ -18,6 +18,7 @@ public class UrineManager : MonoBehaviour
     //public bool peed;
     public bool canPee;
 
+
     //[SerializeField] bool canEnterBathroom, canExitBathroom;
 
     //public Transform enterPosition; 
@@ -76,6 +77,7 @@ public class UrineManager : MonoBehaviour
             if (urineMeter > 0f)
             {
                 urineMeter--;
+
 
             } else
             {

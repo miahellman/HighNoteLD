@@ -10,8 +10,8 @@ public class Drink : MonoBehaviour
     [Header("Internal Constraints")]
     [SerializeField] float drinkSizeModifier;
     [SerializeField] float drinkSizeLimit;
-    [SerializeField] float drunkLimit;
-    [SerializeField] bool canDrink;
+    [SerializeField] float drunkLimit, stoolLimit, tableLimit, boothLimit, wallLimit, personLimit;
+    [SerializeField] bool canDrink; 
 
     public int drinksDrunk;
 
@@ -19,7 +19,8 @@ public class Drink : MonoBehaviour
     //public Grab grab;
     public UrineManager urineManager; 
     public GameObject drinkObject;
-    public FOVChange fovChange; 
+    public FOVChange fovChange;
+    public OrderDrink orderDrink;
 
     Vector3 drinkSize;
     string drinkInputAxis = "Mouse ScrollWheel";
@@ -55,6 +56,8 @@ public class Drink : MonoBehaviour
                 {
                     fovChange.increaseFOV();
                 }
+
+
             }
 
             if (drinkSize.x <= drinkSizeLimit)
@@ -66,7 +69,33 @@ public class Drink : MonoBehaviour
                 drinkObject = null;
             }
 
+        } 
+        else { canDrink = false;}
+        DrinkableSystem();
+    }
+
+    public void DrinkableSystem()
+    {
+       // Debug.Log("I'M WORKING ");
+        if (drinksDrunk >= stoolLimit)
+        {
+            orderDrink.normalOrder = false; orderDrink.stoolOrder = true;
         }
-        else { canDrink = false;  }
+        if (drinksDrunk >= tableLimit)
+        {
+            orderDrink.stoolOrder = false; orderDrink.tableOrder = true;
+        }
+        if (drinksDrunk >= boothLimit)
+        {
+            orderDrink.tableOrder = false; orderDrink.boothOrder = true;
+        }
+        if (drinksDrunk >= wallLimit)
+        {
+            orderDrink.boothOrder = false; orderDrink.wallOrder = true;
+        }
+        if (drinksDrunk >= personLimit)
+        {
+            orderDrink.wallOrder = false; orderDrink.personOrder = true;
+        }
     }
 }

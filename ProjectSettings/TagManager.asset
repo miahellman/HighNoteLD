@@ -14,6 +14,10 @@ TagManager:
   - BarExit
   - Order
   - DrinkStool
+  - DrinkBooth
+  - DrinkTable
+  - DrinkWall
+  - DrinkPerson
   layers:
   - Default
   - TransparentFX

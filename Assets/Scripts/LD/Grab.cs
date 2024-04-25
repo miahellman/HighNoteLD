@@ -31,9 +31,17 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
                 {
                     // Pickup Object
                     PickupObject(hit.transform.gameObject);
-                    if (hit.transform.gameObject.tag == "Drink" ||
-                            (orderDrink.stoolOrder == true && hit.transform.gameObject.tag == "DrinkStool") 
-                            /* || (other ordering and blah blah blah) */) //if the object is drink object
+                    if (hit.transform.gameObject.tag == "Drink" 
+                           ||
+                            (orderDrink.stoolOrder == true && hit.transform.gameObject.tag == "DrinkStool")
+                           ||
+                            (orderDrink.tableOrder == true && hit.transform.gameObject.tag == "DrinkTable")
+                           ||
+                            (orderDrink.boothOrder == true && hit.transform.gameObject.tag == "DrinkBooth")
+                           ||
+                            (orderDrink.wallOrder == true && hit.transform.gameObject.tag == "DrinkWall")
+                           ||
+                            (orderDrink.personOrder == true && hit.transform.gameObject.tag == "DrinkPerson")) //if the object is drink object
                     {
                         drink.drinkObject = hit.transform.gameObject; //assign it so that drink script can access it
                     }
