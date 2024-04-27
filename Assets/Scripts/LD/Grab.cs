@@ -10,7 +10,8 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
     [Header("Pickup Settings")]
     [SerializeField] Transform holdArea;
     [SerializeField] Drink drink;
-    public OrderDrink orderDrink; 
+    public OrderDrink orderDrink;
+    public GameObject playerLookAim; 
 
     GameObject heldObj; 
     Rigidbody heldBody;
@@ -43,6 +44,7 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
                            ||
                             (orderDrink.personOrder == true && hit.transform.gameObject.tag == "DrinkPerson")) //if the object is drink object
                     {
+                        playerLookAim.SetActive(true); //set the player aim object to active
                         drink.drinkObject = hit.transform.gameObject; //assign it so that drink script can access it
                     }
                 } 
@@ -51,6 +53,7 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
             } 
             else
             {
+                playerLookAim.SetActive(false); 
                 DropObject();
                 drink.drinkObject = null;
             }
