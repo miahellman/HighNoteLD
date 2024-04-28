@@ -15,7 +15,7 @@ public class FOVChange : MonoBehaviour
     [Header("Pee")]
     public Image overlay;
     public float peeAlpha = 0f;
-    public float peeAlphaMax = 60f;
+    public float peeAlphaMax = 40f;
 
     public void increaseFOV()
     {

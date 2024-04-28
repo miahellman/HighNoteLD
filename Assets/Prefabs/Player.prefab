@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 519535110354225737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2547094011199778706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8432361846983876003}
+  m_Layer: 0
+  m_Name: PlayerLookAim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8432361846983876003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2547094011199778706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6302430260764984929}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2947859432657984089
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +294,7 @@ MonoBehaviour:
   holdArea: {fileID: 781061929960780273}
   drink: {fileID: 5476870713078612708}
   orderDrink: {fileID: 6725718308520854249}
+  playerLookAim: {fileID: 2547094011199778706}
   pickupRange: 5
   pickupForce: 150
   throwForce: 20
@@ -388,7 +420,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5382572100727793683}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 889ca9b5b4ea7984782a6b4f7dccdc61, type: 3}
   m_Name: 
@@ -410,10 +442,10 @@ GameObject:
   - component: {fileID: 4364996839427915001}
   - component: {fileID: 5476870713078612708}
   - component: {fileID: 8490091581926182264}
-  - component: {fileID: 8176976797651833979}
   - component: {fileID: 1404445257712504287}
   - component: {fileID: 2157473791897041962}
   - component: {fileID: 6725718308520854249}
+  - component: {fileID: 8940591665953016772}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -437,6 +469,7 @@ Transform:
   - {fileID: 5288386155091157686}
   - {fileID: 519535110354225737}
   - {fileID: 8157865273226422674}
+  - {fileID: 8432361846983876003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 618.434, z: 0}
 --- !u!136 &5955989412441940297
@@ -567,11 +600,17 @@ MonoBehaviour:
   drinkSizeModifier: 0.03
   drinkSizeLimit: 0.0359615
   drunkLimit: 3
+  stoolLimit: 5
+  tableLimit: 8
+  boothLimit: 11
+  wallLimit: 14
+  personLimit: 17
   canDrink: 0
   drinksDrunk: 0
   urineManager: {fileID: 1404445257712504287}
   drinkObject: {fileID: 0}
   fovChange: {fileID: 8490091581926182264}
+  orderDrink: {fileID: 6725718308520854249}
 --- !u!114 &8490091581926182264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,18 +626,9 @@ MonoBehaviour:
   cam: {fileID: 7219876380038845877}
   fovMax: 100
   fovModifier: 1
---- !u!114 &8176976797651833979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5856423451904946759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bf4873716311894686fbacba0525886, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  overlay: {fileID: 0}
+  peeAlpha: 0
+  peeAlphaMax: 60
 --- !u!114 &1404445257712504287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,7 +644,7 @@ MonoBehaviour:
   fovChange: {fileID: 8490091581926182264}
   gameManager: {fileID: 0}
   urineMeter: 0
-  urineMax: 10
+  urineMax: 100
   canPee: 0
 --- !u!114 &2157473791897041962
 MonoBehaviour:
@@ -642,13 +672,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canOrder: 0
+  dialogueTrigger: {fileID: 8940591665953016772}
   normalDrink: {fileID: 5364457575705666252, guid: ffae36c41d2b64e42a2645fad5a597dc, type: 3}
   stoolDrink: {fileID: 311999878483977069, guid: dbde7420bf66e124884839d08541323d, type: 3}
-  tableDrink: {fileID: 0}
+  tableDrink: {fileID: 3320623479178796256, guid: 7ff520c035b4c99478cf4cd95911b9b6, type: 3}
+  wallDrink: {fileID: 0}
+  boothDrink: {fileID: 0}
+  personDrink: {fileID: 1248809188072236454, guid: c28f7297a8a812140bb48254bcd09cc4, type: 3}
   spawnPosition: {fileID: 0}
   normalOrder: 0
   stoolOrder: 0
   tableOrder: 0
+  wallOrder: 0
+  boothOrder: 0
+  personOrder: 0
+--- !u!114 &8940591665953016772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856423451904946759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc6863eb3e2f914d91877391dfcadaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
 --- !u!1 &8547744843547965377
 GameObject:
   m_ObjectHideFlags: 0

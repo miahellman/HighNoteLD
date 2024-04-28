@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePaused: 0
+  readyWASD: 0
+  readyMouse: 0
+  countDownWASD: 5
+  countDownMouse: 3
   modifyUI: {fileID: 0}
+  canExit: {fileID: 0}
   player: {fileID: 0}
   isGameOver: 0

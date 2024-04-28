@@ -26,13 +26,15 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
 
+    private void Start()
+    {
         //find player object
         player = GameObject.Find("Player");
 
@@ -40,9 +42,7 @@ public class GameManager : MonoBehaviour
         modifyUI = GameObject.Find("Canvas").GetComponent<ModifyUI>();
         //find canExit component in player
         canExit = GameObject.Find("Player").GetComponent<CanExit>();
-
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -97,6 +97,9 @@ public class GameManager : MonoBehaviour
 
         if (isGameOver)
         {
+            //show mouse cursor
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("EndScene");
         }
 
