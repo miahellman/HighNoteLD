@@ -35,15 +35,12 @@ public class GameManager : MonoBehaviour
 
         //find player object
         player = GameObject.Find("Player");
-   
-    }
-    // Start is called before the first frame update
-    private void Start()
-    {
+
         //find modifyUI component in canvas
         modifyUI = GameObject.Find("Canvas").GetComponent<ModifyUI>();
         //find canExit component in player
         canExit = GameObject.Find("Player").GetComponent<CanExit>();
+
     }
 
     // Update is called once per frame
