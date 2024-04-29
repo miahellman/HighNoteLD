@@ -82,6 +82,16 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
+        if ((scene.name == "StartScene") || (scene.name == "EndScene"))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     //start game function
@@ -97,9 +107,6 @@ public class GameManager : MonoBehaviour
 
         if (isGameOver)
         {
-            //show mouse cursor
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("EndScene");
         }
 
