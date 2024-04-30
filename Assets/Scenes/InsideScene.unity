@@ -15760,14 +15760,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 40093366349629299, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319659946566774205, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1404445257712504287, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1371743157}
+    - target: {fileID: 2012728708359390392, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3817497945479731480, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1371743157}
+    - target: {fileID: 3890275001030757632, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4239068794855813405, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_TargetTexture
       value: 
