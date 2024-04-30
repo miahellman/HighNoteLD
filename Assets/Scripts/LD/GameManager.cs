@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public bool gamePaused = false;
     public bool readyWASD;
-    public bool readyMouse; 
+    public bool readyMouse;
 
-    public float countDownWASD; 
+    public float countDownWASD;
     public float countDownMouse;
 
     public ModifyUI modifyUI;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     //singleton 
     public static GameManager instance;
-    public GameObject player; 
+    public GameObject player;
 
     [HideInInspector] public bool isGameOver = false;
 
@@ -39,9 +39,9 @@ public class GameManager : MonoBehaviour
         player = GameObject.Find("Player");
 
         //find modifyUI component in canvas
-        modifyUI = GameObject.Find("Canvas").GetComponent<ModifyUI>();
+        modifyUI = GameObject.Find("Canvas")?.GetComponent<ModifyUI>();
         //find canExit component in player
-        canExit = GameObject.Find("Player").GetComponent<CanExit>();
+        canExit = GameObject.Find("Player")?.GetComponent<CanExit>();
     }
     // Update is called once per frame
     void Update()
@@ -59,13 +59,13 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = gamePaused ? 0 : 1;
 
-        if (canExit.canExit && Input.GetKeyUp(KeyCode.Space))
+        if (canExit != null && canExit.canExit && Input.GetKeyUp(KeyCode.Space))
         {
             Debug.Log("game over");
             GameOver();
         }
 
-        //if 'x' pressed quick exit to end scene
+        //if 'x' pressed quick exit to end scenes
         if (Input.GetKeyUp(KeyCode.X))
         {
             SceneManager.LoadScene("EndScene");
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked; //disables the mouse cursor
-        } 
+        }
         else
         {
             Cursor.visible = true;
