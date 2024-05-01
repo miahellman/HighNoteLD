@@ -2014,6 +2014,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 08c91461291524831ba3529ebb3858e6, type: 2}
+    - target: {fileID: -8279936659934320278, guid: ee648059248e30f489170ed717582cae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.229
+      objectReference: {fileID: 0}
     - target: {fileID: -8268609116094703832, guid: ee648059248e30f489170ed717582cae, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2026,6 +2030,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 860e47c995247fd4cb1ecc82088d0034, type: 2}
+    - target: {fileID: -6142658749136629925, guid: ee648059248e30f489170ed717582cae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.229
+      objectReference: {fileID: 0}
     - target: {fileID: -6102576795102129543, guid: ee648059248e30f489170ed717582cae, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5409,7 +5417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &618802193
 Transform:
   m_ObjectHideFlags: 0
@@ -15772,11 +15780,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 40093366349629299, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1319659946566774205, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1404445257712504287, guid: d270e1455a2626d4b85e47f9700c9d66, type: 3}
       propertyPath: gameManager
@@ -16814,6 +16822,14 @@ PrefabInstance:
     - target: {fileID: 4434907143542138, guid: 40af2b898b660d74188dd788ce799747, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 78.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 198020576693072572, guid: 40af2b898b660d74188dd788ce799747, type: 3}
+      propertyPath: SubModule.subEmitters.Array.data[1].emitProbability
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198725875636945962, guid: 40af2b898b660d74188dd788ce799747, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

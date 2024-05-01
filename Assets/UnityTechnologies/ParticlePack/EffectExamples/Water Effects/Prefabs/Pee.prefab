@@ -13441,7 +13441,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -13620,7 +13620,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 0
+    quality: 2
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1
@@ -13648,12 +13648,12 @@ ParticleSystem:
     - serializedVersion: 3
       emitter: {fileID: 198725875636945962}
       type: 1
-      properties: 0
+      properties: 1
       emitProbability: 1
     - serializedVersion: 3
       emitter: {fileID: 198044518086439584}
       type: 1
-      properties: 0
+      properties: 2
       emitProbability: 1
   LightsModule:
     enabled: 0
