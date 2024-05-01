@@ -17,10 +17,10 @@ public class UrineManager : MonoBehaviour
     public float urineMax;
     //public bool peed;
     public bool canPee;
+    public bool otherPee;
 
     //pee visual
     [SerializeField] GameObject peeObject;
-
 
     //[SerializeField] bool canEnterBathroom, canExitBathroom;
 
@@ -78,8 +78,13 @@ public class UrineManager : MonoBehaviour
     {
         if (canPee && Input.GetKey(KeyCode.E)) //if they can pee and they hit the pee button
         {
-            //pee object set active if peeing
+            //can pee on the dance floor
+            if (otherPee && urineMeter > 0f)
+            {
+                peeObject.SetActive(true);
+            }
 
+            //reg pee
             if (urineMeter > 0f)
             {
                 peeObject.SetActive(true);
@@ -112,6 +117,12 @@ public class UrineManager : MonoBehaviour
             canPee = true;
         }
 
+        if (other.tag == "OtherPeeZone")
+        {
+            canPee = true;
+            otherPee = true;
+        }
+
         
     }
     private void OnTriggerExit(Collider other)
@@ -123,7 +134,13 @@ public class UrineManager : MonoBehaviour
         {
             canPee = false;
         }
-  
-        
+
+        if (other.tag == "OtherPeeZone")
+        {
+            canPee = false;
+            otherPee = false;
+        }
+
+
     }
 }

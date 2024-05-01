@@ -18,6 +18,7 @@ TagManager:
   - DrinkTable
   - DrinkWall
   - DrinkPerson
+  - OtherPeeZone
   layers:
   - Default
   - TransparentFX
