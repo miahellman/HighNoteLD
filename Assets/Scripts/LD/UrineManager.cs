@@ -8,7 +8,7 @@ public class UrineManager : MonoBehaviour
     //CRITICAL BUG WHERE THE PLAYER'S LOCATION NEEDS TO BE RESET MOVING IN BETWEEN SCENES, AND THE PLAYER OBJECT NEEDS TO DELETE THE "OTHER" PLAYER WHEN IT ISN'T DESTROYED ON LOAD
     //locations should reset to where the entrances/exits are on entering a scene
 
-    public FOVChange fovChange; 
+    public FOVChange fovChange;
 
     //game manager
     public GameManager gameManager;
@@ -17,6 +17,9 @@ public class UrineManager : MonoBehaviour
     public float urineMax;
     //public bool peed;
     public bool canPee;
+
+    //pee visual
+    [SerializeField] GameObject peeObject;
 
 
     //[SerializeField] bool canEnterBathroom, canExitBathroom;
@@ -28,6 +31,7 @@ public class UrineManager : MonoBehaviour
     {
         //find game manager
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        peeObject = GameObject.Find("Pee");
 
         urineMeter = 0f; 
     }
@@ -74,18 +78,25 @@ public class UrineManager : MonoBehaviour
     {
         if (canPee && Input.GetKey(KeyCode.E)) //if they can pee and they hit the pee button
         {
+            //pee object set active if peeing
+
             if (urineMeter > 0f)
             {
+                peeObject.SetActive(true);
                 urineMeter--;
-
-
-            } else
+            } 
+            else
             {
                 urineMeter = 0f; 
             }
             fovChange.resetFOV();
+        } 
+        else
+        {
+            //pee object set inactive if not peeing
+            peeObject.SetActive(false);
         }
-        //play animation of player pissing or something
+        
     }
 
     public void TooMuchUrine()

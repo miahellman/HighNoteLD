@@ -64,7 +64,7 @@ Material:
     - _resolution: 128
     - _saturation: 1
     - _steps: 7.41
-    - _vr: 0.36149713
+    - _vr: 0.864
     - _vs: 0.354
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
