@@ -83,19 +83,23 @@ public class Drink : MonoBehaviour
         }
         if (drinksDrunk >= tableLimit)
         {
-            orderDrink.stoolOrder = false; orderDrink.tableOrder = true;
+            orderDrink.stoolOrder = false; 
+            orderDrink.tableOrder = true;
         }
         if (drinksDrunk >= boothLimit)
         {
-            orderDrink.tableOrder = false; orderDrink.boothOrder = true;
+            orderDrink.tableOrder = false; 
+            orderDrink.boothOrder = true;
         }
         if (drinksDrunk >= wallLimit)
         {
-            orderDrink.boothOrder = false; orderDrink.wallOrder = true;
+            orderDrink.boothOrder = false; 
+            orderDrink.wallOrder = true;
         }
         if (drinksDrunk >= personLimit)
         {
-            orderDrink.wallOrder = false; orderDrink.personOrder = true;
+            orderDrink.wallOrder = false; 
+            orderDrink.personOrder = true;
         }
     }
 }
