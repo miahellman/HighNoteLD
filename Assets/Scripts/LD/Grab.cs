@@ -31,7 +31,6 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
                 if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange))
                 {
                     // Pickup Object
-                    PickupObject(hit.transform.gameObject);
                     if (hit.transform.gameObject.tag == "Drink" 
                            ||
                             (orderDrink.stoolOrder == true && hit.transform.gameObject.tag == "DrinkStool")
@@ -44,6 +43,7 @@ public class Grab: MonoBehaviour //https://www.youtube.com/watch?v=6bFCQqabfzo&l
                            ||
                             (orderDrink.personOrder == true && hit.transform.gameObject.tag == "DrinkPerson")) //if the object is drink object
                     {
+                        PickupObject(hit.transform.gameObject);
                         playerLookAim.SetActive(true); //set the player aim object to active
                         drink.drinkObject = hit.transform.gameObject; //assign it so that drink script can access it
                     }
